@@ -9,14 +9,8 @@ public class Kata
     string[] substrings = sentence.Split(" ");
    
     for(int i = 0; i < substrings.Length; i++)
-    {
       if(substrings[i].Length >= 5)
-      {
-       char[] charArray = substrings[i].ToCharArray();
-       Array.Reverse(charArray);
-       substrings[i] = new string(charArray);
-      }
-    }
+       substrings[i] = new string(substrings[i].Reverse().ToArray());
     
     return (String.Join(" ", substrings));
   }
